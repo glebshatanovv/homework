@@ -1,5 +1,5 @@
 ﻿using System;
-c
+class Program
 {
 
 }

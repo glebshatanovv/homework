@@ -3,8 +3,6 @@ class Program
 {
     static int nod(int a, int b)
     {
-        a = Math.Abs(a);
-        b = Math.Abs(b);
 
         while (b != 0)
         {
@@ -13,7 +11,14 @@ class Program
             a = c;
         }
         return a;
+    }
+    static int nod(int a, int b, int c)
+    {
+        a = Math.Abs(a);
+        b = Math.Abs(b);
+        c = Math.Abs(c);
 
+        return nod(nod(a, b), c);
     }
     static void Main()
     {
@@ -21,8 +26,11 @@ class Program
         int x = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Введите второе число:");
         int y = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($"НОД чисел {x} и {y} = {nod(x,y)}");
+        Console.WriteLine("Введите третье число:");
+        int z = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"НОД чисел {x} и {y} и {z} = {nod(x, y, z)}");
 
 
     }
+
 }

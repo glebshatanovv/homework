@@ -39,6 +39,7 @@ namespace ConsoleApp1
             Console.WriteLine($"Среднее арифметическое (out): {sred:F2}");
 
         }
+        //2
         static long calculator(out double sred, ref long umn, params int[] numbers)
         {
             if (numbers == null || numbers.Length == 0)
@@ -56,6 +57,7 @@ namespace ConsoleApp1
             sred = sum / numbers.Length;
             return sum;
         }
+        
         
     }
 }

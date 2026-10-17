@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net.Sockets;
+using System.Xml.Schema;
 namespace ConsoleApp1
 {
     class Program
@@ -28,6 +30,32 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Таких чисел нет в списке");
             }
+            // 2
+            long product = 1;
+            double sred;
+            long sum = calculator(out sred,ref product, 5, 2, 4, 10);
+            Console.WriteLine($"Сумма элементов (return): {sum}");
+            Console.WriteLine($"Произведение элементов (ref): {product}");
+            Console.WriteLine($"Среднее арифметическое (out): {sred:F2}");
+
         }
+        static long calculator(out double sred, ref long umn, params int[] numbers)
+        {
+            if (numbers == null || numbers.Length == 0)
+            {
+                sred = 0;
+                umn = 0;
+                return 0;
+            }
+            long sum = 0;
+            foreach (int num in numbers) 
+            {
+                sum += num;
+                umn += num;
+            }
+            sred = sum / numbers.Length;
+            return sum;
+        }
+        
     }
 }
